@@ -58,23 +58,30 @@ function handleClick(event) {
 }
 function checkForWin() {
   // check rows
-  for (let i = 0; i < 9; i += 3) {
-    if (
-      boxes[i].innerHTML === currentPlayer &&
-      boxes[i + 1].innerHTML === currentPlayer &&
-      boxes[i + 2].innerHTML === currentPlayer
-    ) {
-      return true;
-    }
-  }
-
+  // for (let i = 0; i < 9; i += 3) {
+  //   if (
+  //     boxes[i].innerHTML === currentPlayer &&
+  //     boxes[i + 1].innerHTML === currentPlayer &&
+  //     boxes[i + 2].innerHTML === currentPlayer
+  //   ) {
+  //     return true;
+  //   }
+  // }
+    for (let i=0; i<3; i++){
+        if(boardArray[i][0] === currentPlayer &&
+           boardArray[i][1] === currentPlayer &&
+           boardArray[i][2] === currentPlayer){
+          return true;
+        }        
+      }
+    
   // check columns
   for (let i = 0; i < 3; i++) {
     if (
       boxes[i].innerHTML === currentPlayer &&
       boxes[i + 3].innerHTML === currentPlayer &&
       boxes[i + 6].innerHTML === currentPlayer
-    ) {
+    ){
       return true;
     }
   }

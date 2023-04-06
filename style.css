@@ -1,0 +1,40 @@
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+  }
+ #board2 {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+ } 
+  .cell, .box {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-size: 72px;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .cell:hover, .box:hover {
+    background-color: #eee;
+  }
+  
+  #message {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #reset {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  } 

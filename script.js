@@ -58,51 +58,39 @@ function handleClick(event) {
 }
 function checkForWin() {
   // check rows
-  // for (let i = 0; i < 9; i += 3) {
-  //   if (
-  //     boxes[i].innerHTML === currentPlayer &&
-  //     boxes[i + 1].innerHTML === currentPlayer &&
-  //     boxes[i + 2].innerHTML === currentPlayer
-  //   ) {
-  //     return true;
-  //   }
-  // }
-    for (let i=0; i<3; i++){
-        if(boardArray[i][0] === currentPlayer &&
-           boardArray[i][1] === currentPlayer &&
-           boardArray[i][2] === currentPlayer){
-          return true;
-        }        
-      }
-    
+  for (let i = 0; i < 3; i++) {
+    if (
+      boardArray[i][0] === currentPlayer &&
+      boardArray[i][1] === currentPlayer &&
+      boardArray[i][2] === currentPlayer
+    ) {
+      return true;
+    }
+  }
   // check columns
   for (let i = 0; i < 3; i++) {
     if (
-      boxes[i].innerHTML === currentPlayer &&
-      boxes[i + 3].innerHTML === currentPlayer &&
-      boxes[i + 6].innerHTML === currentPlayer
-    ){
-      return true;
-    }
-  }
-  //check diagonals
-  for (let i = 0; i < 1; i++) {
-    if (
-      boxes[i].innerHTML == currentPlayer &&
-      boxes[i + 4].innerHTML == currentPlayer &&
-      boxes[i + 8].innerHTML == currentPlayer
+      boardArray[0][i] === currentPlayer &&
+      boardArray[1][i] === currentPlayer &&
+      boardArray[2][i] === currentPlayer
     ) {
       return true;
     }
   }
-  for (let i = 0; i < 1; i++) {
-    if (
-      boxes[i + 2].innerHTML == currentPlayer &&
-      boxes[i + 4].innerHTML == currentPlayer &&
-      boxes[i + 6].innerHTML == currentPlayer
-    ) {
-      return true;
-    }
+  // check diagonals
+  if (
+    boardArray[0][0] == currentPlayer &&
+    boardArray[1][1] == currentPlayer &&
+    boardArray[2][2] == currentPlayer
+  ) {
+    return true;
+  }
+  if (
+    boardArray[0][2] == currentPlayer &&
+    boardArray[1][1] == currentPlayer &&
+    boardArray[2][0] == currentPlayer
+  ) {
+    return true;
   }
 }
 // resets the board

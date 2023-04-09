@@ -1,13 +1,14 @@
 const message = document.getElementById("message");
 const resetButton = document.getElementById("reset");
 const boxes = document.getElementsByClassName("box");
-
 const gameBoard = document.getElementById("gameBoard");
+
 let boardArray = [
   ["", "", ""],
   ["", "", ""],
   ["", "", ""],
 ];
+
 for (i = 0; i < boardArray.length; i++) {
   for (j = 0; j < boardArray[i].length; j++) {
     let box = document.createElement("div");
